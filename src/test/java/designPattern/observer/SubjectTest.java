@@ -35,7 +35,7 @@ public class SubjectTest {
         // then
         WeatherData weatherData = new WeatherData(75);
         verify(observerA).receiveData(weatherData);
-        verify(observerA).receiveData(weatherData);
+        verify(observerB).receiveData(weatherData);
     }
 
 }
