@@ -166,7 +166,6 @@ public class SinglyLinkedList<T> {
         }
 
         return builder.toString();
-
     }
 
     private class Link<T> {
