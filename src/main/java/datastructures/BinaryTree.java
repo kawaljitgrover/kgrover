@@ -61,16 +61,8 @@ public class BinaryTree<T> {
 
     public int size() {
         List<T> elements = new ArrayList<>(0);
-        findSizeOfTree(root, elements);
+        inOrderTraversal(root, elements);
         return elements.size();
-    }
-
-    private void findSizeOfTree(Node<T> node, List<T> elements) {
-        if (node != null) {
-            findSizeOfTree(node.getLeft(), elements);
-            findSizeOfTree(node.getRight(), elements);
-            elements.add(node.getData());
-        }
     }
 
     public Node<T> findMin() {
