@@ -1,5 +1,8 @@
 package datastructures;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Graph<T> {
     private Vertex<T>[] vertexes;
     private int size;
@@ -24,7 +27,7 @@ public class Graph<T> {
         adjacentMatrix[endVertex.getIndex()][fromVertex.getIndex()] = 1;
     }
 
-    private Vertex<T> findVertex(T data) {
+    public Vertex<T> findVertex(T data) {
         for (Vertex<T> vertex : vertexes) {
             if (vertex.getData().equals(data)) {
                 return vertex;
@@ -45,4 +48,15 @@ public class Graph<T> {
         return adjacentMatrix;
     }
 
+    public List<Vertex<T>> getAdjacentUnVisitedVertexes(Vertex<T> dequeuedVertex) {
+        List<Vertex<T>> unvisitedAdjacentVertexes = new ArrayList<>(0);
+
+        for (int i = 0; i < maxSize; i++) {
+            if (adjacentMatrix[dequeuedVertex.getIndex()][i] == 1 && !vertexes[i].isVisited()) {
+                unvisitedAdjacentVertexes.add(vertexes[i]);
+            }
+        }
+
+        return unvisitedAdjacentVertexes;
+    }
 }
