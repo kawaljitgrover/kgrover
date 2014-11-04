@@ -120,4 +120,8 @@ public class BinaryTree<T> {
         }
     }
 
+    public Node<T> getRoot() {
+        return root;
+    }
+
 }
