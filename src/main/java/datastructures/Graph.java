@@ -51,7 +51,7 @@ public class Graph<T> {
     public List<Vertex<T>> getAdjacentUnVisitedVertexes(Vertex<T> dequeuedVertex) {
         List<Vertex<T>> unvisitedAdjacentVertexes = new ArrayList<>(0);
 
-        for (int i = 0; i < maxSize; i++) {
+        for (int i = 0; i < size; i++) {
             if (adjacentMatrix[dequeuedVertex.getIndex()][i] == 1 && !vertexes[i].isVisited()) {
                 unvisitedAdjacentVertexes.add(vertexes[i]);
             }
